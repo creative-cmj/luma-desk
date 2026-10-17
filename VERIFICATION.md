@@ -1,28 +1,9 @@
-# Luma Desk 2.7.0 — Windows verification
+# Windows 2.8 verification
 
-## Verified
+Production TypeScript/Vite build and 48 unit tests pass, including duplicate checks, download state, explicit restart, persistence failure, offline retry and unsupported builds.
 
-- TypeScript and production builds; 44 unit tests.
-- Original settings format 4 migrates to 5 with a byte-identical timestamped backup. Atomic-save/corrupt-primary recovery and malformed/import rejection remain covered.
-- Native executable: command palette creates a real note window; typing and arrow-key text editing retain its position. Quick tint and font controls update the note.
-- Keyboard editing updates actual Windows widget bounds with snapping, resizing, group movement, Undo and Redo. The native alignment-guide window renders and is non-focusable/click-through; its renderer cannot execute desktop actions.
-- Shared-content Space switching, pinning a clock across Spaces, live per-widget surface/opacity, clock/calendar expansion and exact compact-bound restoration.
-- Focus Mode hides only marked Luma widgets. Seven-second Peek automatically restores non-topmost behavior; hidden-state Peek also restores its original visibility flags.
-- Conflicting global shortcut assignments retain previous active bindings. Space shortcuts register. Optional native toolbar expands/collapses within the monitor work area and cannot enumerate external applications.
-- A complete process restart preserves saved state and desktop-control preferences.
-- Existing editor, personal content, sixteen widgets, nine themes, local reminders, file-launch safety, import, monitor placement and native selected-app tiling/restore regressions pass.
-- Packaged startup, close-to-tray, local save, sandbox and portable-wrapper launch checks run against the 2.7 executable.
+Packaged app updater test uses an isolated profile and local HTTP fixture hosting the exact release installer/metadata. The real electron-updater rejects a corrupted SHA-512, downloads the real NSIS artifact and yields a byte-identical executable. Settings displays readiness; clicking Restart saves a checkpoint and generates the actual NSIS --updated/--force-run command. Installer spawn and process quit are intercepted. Widget renderers and invalid commands are denied by the main process.
 
-Tests use isolated profiles and task-owned fixture windows. The running installed copy and normal user data are not used or overwritten during testing.
+The running installed copy and personal profile are not replaced. Full installer replacement and a later live-version upgrade remain unverified. Windows builds are unsigned; checksum validation is not an Authenticode publisher signature. Only installed Windows Setup copies support updates. Portable, development builds and Mac preview do not. Existing physical mixed-DPI/Explorer/fullscreen compatibility limits remain.
 
-## Measurement
-
-The release includes an actual Electron idle-process sample: three visible widgets, the panel and optional toolbar, sampled over three seconds. CPU percentages and working/private memory are recorded by process. This is an observation on this Windows host, not a benchmark or performance guarantee. Multiple Electron renderer windows consume substantial memory.
-
-## Limits
-
-Host: Windows 11 build 26200 x64, two 1920×1080 monitors at 100% scaling. Negative/portrait work areas, mixed scaling metadata and disconnect/reconnect recovery are deterministic tests. Physical mixed-DPI changes, unplugging displays, real sleep/resume, Explorer restart and all full-screen/Show Desktop combinations were not manually exercised for this release.
-
-The existing Explorer fallback limitation remains: Show Desktop can hide ordinary transparent widget windows. Widgets are below ordinary applications except during explicit temporary Peek. No Windows virtual-desktop manager or Hyprland compositor is bundled.
-
-Windows executables are unsigned. Mac 2.7 and Linux builds are not provided or verified. Mac users can continue to use the separate 2.6 preview.
+For future releases: increment package version, build Windows NSIS with the GitHub publish configuration, run tests, then upload Setup.exe, its .blockmap, and latest.yml to the same stable release. Publish only once all assets are uploaded and verified; keep prior release assets for differential downloads. Never embed repository credentials in the app. Do not publish an unrelated latest stable release without Windows update metadata; keep Mac-only previews as prereleases or provide the matching Windows manifest.
