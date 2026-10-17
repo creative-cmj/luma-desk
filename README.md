@@ -1,55 +1,31 @@
 # Luma Desk
 
-Sixteen useful desktop widgets, arranged your way. Windows stable and a new Mac preview. Luma Desk runs locally without an account or subscription.
+Your desktop, in full flow. Sixteen local widgets, nine themes, five tiling layouts, keyboard commands and personal widget workspaces.
 
-**Windows x64 · 2.3.0 · unsigned community release**
+[Download Luma Desk 2.5.0](https://github.com/creative-cmj/luma-desk/releases/tag/v2.5.0) · [Website](https://luma-desktop-widgets.gentlechar18.chatgpt.site/) · [Report a problem](https://github.com/creative-cmj/luma-desk/issues/new?template=bug_report.yml)
 
-[Download the latest release](https://github.com/creative-cmj/luma-desk/releases/latest) · [Report a bug](https://github.com/creative-cmj/luma-desk/issues/new?template=bug_report.yml)
+Windows x64 installer and portable builds; Mac preview for Apple Silicon and Intel (macOS 13+). Windows builds are unsigned. Mac builds are ad-hoc signed, not Developer ID signed or notarized, and may be blocked by macOS.
 
-[Visit the Luma Desk website](https://luma-desktop-widgets.gentlechar18.chatgpt.site/) for real screenshots, theme previews and a short interface tour.
+## Workflow
 
-![Actual Luma Desk 2.3.0 theme gallery](https://luma-desktop-widgets.gentlechar18.chatgpt.site/assets/themes-2.3.png)
+Choose **Workflow** in the app. Pick Master, Dwindle, Grid, Columns or Monocle, adjust gaps and main-window share, select a monitor, and arrange Luma widgets. Unlock the layout first. Undo restores the previous widget layout.
 
-## Mac preview
+On Windows, refresh the app-window list, select only the windows you want to move and choose Arrange. Restore brings back their previous placements. Other-app tiling is not available on Mac. This is manual arrangement, not an automatically running window manager.
 
-[Download Luma Desk 2.4.0 for Mac](https://github.com/creative-cmj/luma-desk/releases/tag/v2.4.0-mac-preview) — Apple Silicon and Intel, disk image and ZIP. Ad-hoc signed, without Apple Developer ID or notarization; macOS may block opening. [Mac installation, behavior and verification](MAC-PREVIEW.md). Windows stable remains 2.3.0.
+Use **Ctrl+K / Command+K** for command search. Switch Luma workspaces, tuck widgets away and bring them back, or recover a missing layout. Luma presets are separate from OS virtual desktops.
 
-## New in 2.3
+Gradient borders, adjustable glow, translucent surfaces and widget entrance motion update live. Reduced-motion preferences are respected. These settings affect Luma, not every OS window.
 
-Six more palettes: Ocean, Forest, Sunset, Rose, Lavender and Midnight. Each has two matching offline wallpapers. Theme selection updates the live widgets and layout preview. Colors, opacity and typography remain customizable.
+## Install and keep your content
 
-Settings/preset format is now **4**. Formats 1–3 upgrade with an untouched timestamped backup, keeping notes and layouts. Older app versions cannot read format 4; restore the original backup before downgrading.
+Windows: run Setup.exe, or launch Portable.exe without installation. Quit the existing version before starting the new one. Both share `%APPDATA%\Luma Desk`.
 
-## Your everyday, within reach
+Mac: open the DMG, drag Luma Desk into Applications, and launch it there. For a ZIP, extract and move the app bundle into Applications. Select arm64 for M-series Macs and x64 for Intel. Data saves in `~/Library/Application Support/Luma Desk`. Wallpapers are set in macOS System Settings. Widgets can rise when clicked and may be hidden by Show Desktop or full-screen Spaces.
 
-- Clock, sticky notes, tasks, app launcher, focus timer, calendar and quick links.
-- Calculator, countdown, habits, weekly planner, journal, stopwatch, breathing, daily thought and decision tools.
-- Neon, Cozy, Minimal, Ocean, Forest, Sunset, Rose, Lavender and Midnight themes; local wallpapers; editable widget colors, typography and transparency.
-- Move, resize, align, lock and undo in a visual editor. Save different layouts as presets; up to twelve widgets per layout.
-- Local saving, versioned migration backups and layout-only exports that omit personal content.
+Close Luma before backing up its data folder. Existing format-4 content remains compatible. New workflow settings use a separate `desktop-control.json`; existing notes and presets are not converted to a new format. Do not share profiles publicly: they may contain private writing and file paths.
 
-## Install
+## What Luma is
 
-Download **Luma-Desk-2.3.0-Setup.exe** from Releases, run it, choose a per-user location, and launch Luma Desk. The alternative **Portable.exe** runs without installation but stores settings in your Windows user profile, not beside the executable. Both variants share the normal Luma Desk profile; quit one before opening the other.
+An independent Electron desktop widget app inspired by customizable, keyboard-led workflows. It does not run the Hyprland compositor or Linux C++ plugins. [Full capabilities and limitations](RELEASE-NOTES.md). [Verification notes](VERIFICATION.md).
 
-These builds are unsigned. Windows may show an unknown-publisher warning; no code-signing identity has been verified. Review the release and checksums before deciding whether to run it. Do not disable Windows security or antivirus.
-
-Choose **Widgets** to add a companion, enable **Edit Layout** to move or resize, and lock the layout when finished. Close the panel to keep widgets running. Reopen from the tray; **Ctrl+Alt+Space** shows or hides widgets. Quit from the tray or Settings to close the app.
-
-## Compatibility and limitations
-
-Tested on Windows 11 build 26200, x64, two 1920×1080 displays at 100% scaling. Other Windows versions, mixed-DPI setups, physical display unplugging, real sleep/resume and Explorer restart have not been verified for this release.
-
-On the tested Windows build Explorer rejected desktop parenting. Luma uses a transparent-window fallback below ordinary application windows, without always-on-top behavior. **Show Desktop may hide widgets**; use the tray or shortcut to restore them. This is not a Windows shell replacement. Separate Electron widget windows can use substantial memory; no low-memory claim is made.
-
-## Privacy and recovery
-
-Luma's runtime needs no account, API key or cloud connection. Notes, tasks and layouts save locally in `%APPDATA%\Luma Desk`. Deliberately opened websites use your default browser. Back up this folder while Luma is closed; uninstall preserves it. Do not upload settings files publicly: they can contain personal writing and local file paths.
-
-If widgets disappear, open Settings from the tray and choose **Recover Off-Screen Widgets**, then **Show widgets**. If a shortcut conflicts, change it in Settings. Moving a restored widget deliberately makes its new placement the intended position.
-
-This repository distributes release binaries, documentation and issue tracking. It does not contain the application's source code. The application license and third-party notices ship with the release.
-
-## Feedback
-
-[Open an issue](https://github.com/creative-cmj/luma-desk/issues). Include the version, Windows build, display scaling and steps to reproduce. Use synthetic notes in screenshots; remove names, private text and file paths. Avoid posting full settings or diagnostic files publicly.
+This public repository hosts release binaries, documentation and build-verification recipes. Application source remains local. No app account, cloud sync, API key or subscription is required.
