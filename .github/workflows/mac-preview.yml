@@ -28,7 +28,7 @@ jobs:
           data=urllib.request.urlopen(req,timeout=180).read()
           assert hashlib.sha256(data).hexdigest()=='7d7233bcec14255d025353960a8af385c3375d48306568b65133941635bc5a0f'
           with zipfile.ZipFile(io.BytesIO(data)) as z:z.extractall('app')
-          p=json.load(open('app/package.json'));p['build']['publish']=[]
+          p=json.load(open('app/package.json'));p['build']['publish']=[];p['dependencies']={'zod':'4.6.7'}
           json.dump(p,open('app/package.json','w'))
           PY
       - name: Package native app and disk image
