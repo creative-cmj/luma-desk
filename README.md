@@ -6,6 +6,10 @@ Sixteen useful Windows desktop widgets, arranged your way. Luma Desk runs locall
 
 [Download the latest release](https://github.com/creative-cmj/luma-desk/releases/latest) · [Report a bug](https://github.com/creative-cmj/luma-desk/issues/new?template=bug_report.yml)
 
+[Visit the Luma Desk website](https://luma-desktop-widgets.gentlechar18.chatgpt.site/) for real screenshots, theme previews and a short interface tour.
+
+![Actual Luma Desk 2.2.1 control panel with synthetic sample content](https://luma-desktop-widgets.gentlechar18.chatgpt.site/assets/desktop-editor.png)
+
 ## Your everyday, within reach
 
 - Clock, sticky notes, tasks, app launcher, focus timer, calendar and quick links.
