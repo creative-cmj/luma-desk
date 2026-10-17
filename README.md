@@ -2,25 +2,31 @@
 
 Sixteen useful Windows desktop widgets, arranged your way. Luma Desk runs locally without an account or subscription.
 
-**Windows x64 · 2.2.1 · unsigned community release**
+**Windows x64 · 2.3.0 · unsigned community release**
 
 [Download the latest release](https://github.com/creative-cmj/luma-desk/releases/latest) · [Report a bug](https://github.com/creative-cmj/luma-desk/issues/new?template=bug_report.yml)
 
 [Visit the Luma Desk website](https://luma-desktop-widgets.gentlechar18.chatgpt.site/) for real screenshots, theme previews and a short interface tour.
 
-![Actual Luma Desk 2.2.1 control panel with synthetic sample content](https://luma-desktop-widgets.gentlechar18.chatgpt.site/assets/desktop-editor.png)
+![Actual Luma Desk 2.3.0 theme gallery](https://luma-desktop-widgets.gentlechar18.chatgpt.site/assets/themes-2.3.png)
+
+## New in 2.3
+
+Six more palettes: Ocean, Forest, Sunset, Rose, Lavender and Midnight. Each has two matching offline wallpapers. Theme selection updates the live widgets and layout preview. Colors, opacity and typography remain customizable.
+
+Settings/preset format is now **4**. Formats 1–3 upgrade with an untouched timestamped backup, keeping notes and layouts. Older app versions cannot read format 4; restore the original backup before downgrading.
 
 ## Your everyday, within reach
 
 - Clock, sticky notes, tasks, app launcher, focus timer, calendar and quick links.
 - Calculator, countdown, habits, weekly planner, journal, stopwatch, breathing, daily thought and decision tools.
-- Neon, Cozy and Minimal themes; local wallpapers; editable widget colors, typography and transparency.
+- Neon, Cozy, Minimal, Ocean, Forest, Sunset, Rose, Lavender and Midnight themes; local wallpapers; editable widget colors, typography and transparency.
 - Move, resize, align, lock and undo in a visual editor. Save different layouts as presets; up to twelve widgets per layout.
 - Local saving, versioned migration backups and layout-only exports that omit personal content.
 
 ## Install
 
-Download **Luma-Desk-2.2.1-Setup.exe** from Releases, run it, choose a per-user location, and launch Luma Desk. The alternative **Portable.exe** runs without installation but stores settings in your Windows user profile, not beside the executable. Both variants share the normal Luma Desk profile; quit one before opening the other.
+Download **Luma-Desk-2.3.0-Setup.exe** from Releases, run it, choose a per-user location, and launch Luma Desk. The alternative **Portable.exe** runs without installation but stores settings in your Windows user profile, not beside the executable. Both variants share the normal Luma Desk profile; quit one before opening the other.
 
 These builds are unsigned. Windows may show an unknown-publisher warning; no code-signing identity has been verified. Review the release and checksums before deciding whether to run it. Do not disable Windows security or antivirus.
 
