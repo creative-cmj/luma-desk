@@ -24,9 +24,9 @@ jobs:
         run: |
           python3 - <<'PY'
           import urllib.request,os,hashlib,zipfile,io,json
-          req=urllib.request.Request('https://api.github.com/repos/creative-cmj/luma-desk/releases/assets/651253865',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/octet-stream','X-GitHub-Api-Version':'2022-11-28'})
+          req=urllib.request.Request('https://api.github.com/repos/creative-cmj/luma-desk/releases/assets/651263769',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/octet-stream','X-GitHub-Api-Version':'2022-11-28'})
           data=urllib.request.urlopen(req,timeout=180).read()
-          assert hashlib.sha256(data).hexdigest()=='401e8add5b517ca17562962808bf46173057a47c36348a4512cb26694567b534'
+          assert hashlib.sha256(data).hexdigest()=='984b3c48f74dbb695d1c4649497d854b19ae5bfc8dbcf710d69cfa6aa98f251d'
           with zipfile.ZipFile(io.BytesIO(data)) as z:z.extractall('app')
           p=json.load(open('app/package.json'));p['build']['publish']=[];p['dependencies']={'zod':'4.6.7'}
           json.dump(p,open('app/package.json','w'))
