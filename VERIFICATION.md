@@ -1,6 +1,10 @@
-# Luma Desk 2.5.0 verification
+# Luma Desk 2.6.0 verification
 
 ## Passed
+
+- New interface tested in the development build and final packaged Windows executable: independent panel/widget themes, workspace switching without note loss, all nine palettes and sixteen icons, command search and restart persistence.
+- Primary button text contrast exceeds 4.5:1 in both interfaces. No horizontal overflow at the supported 1000px minimum or 1600px window width. These checks do not constitute a full accessibility audit.
+- Actual app screenshots captured for all six pages in light mode and desktop/theme/widget pages in dark mode. Packaged native Mac tests also check the overview, light-mode switch and preference persistence.
 
 - TypeScript checks and production frontend/main builds.
 - 38 unit tests, including tiling geometry, non-overlap, negative monitor positions, infeasible layout rejection, configuration validation and backup recovery.
@@ -13,7 +17,7 @@
 - Both Mac architectures built and launched on native standard GitHub-hosted runners: widget tiling, configuration, scratchpad, command palette, nine themes, local restart persistence, Windows-binding isolation and correct external-app tiling unavailability. Bundle signature integrity checked with codesign.
 - Website: responsive layout, interactive five-layout preview, keyboard controls, nine-theme previews, video playback, links and FAQ at 1440, 768, 390 and 320 px.
 
-Mac build/test run: https://github.com/creative-cmj/luma-desk/actions/runs/39056474670
+Mac build/test run: https://github.com/creative-cmj/luma-desk/actions/runs/39058891083
 
 ## Conditions and limits
 
