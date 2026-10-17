@@ -1,14 +1,7 @@
-# Luma Desk 2.2.1
+# Luma Desk 2.3.0 — more color, more you
 
-A reliability update to the sixteen-widget desktop collection.
+Six new color themes join Neon, Cozy and Minimal: **Ocean, Forest, Sunset, Rose, Lavender and Midnight**. Every new theme includes two matching original offline wallpapers. The nine-theme picker previews real palettes and shows which is selected. Widget colors, accents and editor previews stay coordinated; custom accent/surface colors, opacity and type controls remain available.
 
-- Widget positions now remember their intended size and location through temporary display-resolution changes and recover when the original work area returns.
-- Deleted widgets no longer schedule countdown/calendar reminders. A widget shared by another retained layout keeps its reminders.
-- The panel version label now follows package metadata automatically.
-- Oversized settings saves fail before replacing the last readable file and report an actionable error.
+Notes, tasks and existing layouts carry over. Settings/presets now use format 4, with untouched automatic backups when upgrading formats 1–3. Older app versions cannot read format 4; restore the pre-upgrade backup before downgrading.
 
-The sixteen widgets, three themes, layout editor, presets, local content and existing Windows fallback remain available. Data format stays at version 3.
-
-## Checks
-
-Release verification results are recorded in VERIFICATION.md. Builds are unsigned Windows x64 binaries. See README.md for installation, privacy, compatibility and recovery guidance.
+The sixteen widgets and existing Windows integration behavior remain. Builds are unsigned x64; installation, privacy and tested compatibility limits are explained in README.md and VERIFICATION.md.
