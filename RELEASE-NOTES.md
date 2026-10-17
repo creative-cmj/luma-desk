@@ -1,36 +1,35 @@
-# Luma Desk 2.6.0 — a clearer space
+# Luma Desk 2.7.0 — your desktop, within reach
 
-Luma's control panel has a new visual system: clearer navigation, calmer surfaces, original vector icons and coordinated light and dark interfaces.
+This Windows update adds working desktop editing, shared-content Spaces and quicker widget interactions to the native Electron app.
 
-## What changed
+## Use it
 
-- Switch the control panel between light and dark using the sun/moon button. The preference saves locally and stays separate from widget themes.
-- Switch your real widget workspace directly from the sidebar. Current notes follow their widgets without being rolled back.
-- See visible widgets, the selected workspace and connected displays in the desktop overview.
-- Browse nine palette cards with color swatches and sixteen widget cards with consistent vector icons.
-- Use clearer editor controls, settings, dialogs and command search. Secondary quick actions sit below the editor to leave room for the canvas. Short windows receive a compact sidebar.
-- Keyboard focus, reduced motion and undo/redo are retained. Fonts and icons work offline; no remote design dependency is added.
+- **Edit Desktop:** enter from the tray, desktop toolbar or control panel. Default global shortcut: Control+Alt+E. Use the top handles to drag and the corner to resize. Shift-click widgets or handles to build a selection. Alignment guides show snapped edges/centers and equal gaps. Hold Alt while dragging to bypass snapping.
+- **Keyboard editing:** arrows move the selection; Shift moves farther; Control+arrows resize; Control+D duplicates; Control+A selects unlocked widgets. Undo/Redo use Control+Z / Control+Y. Escape cancels an active gesture or exits editing. Text fields retain their normal typing and arrow-key behavior.
+- **Command search:** Control+K inside the panel, or configurable global Control+Alt+K. Add notes/clocks, start focus timing, show your launcher, switch Spaces or themes, lock the layout, show/hide or recover widgets. Recent commands stay locally on the computer.
+- **Spaces:** existing saved presets now appear as Spaces. Gaming, School and Chill starters, previews, create/rename/duplicate/delete, and optional global shortcuts remain local. Share or move an existing widget into another Space from its style inspector. Sharing keeps one live content identity. Pin across all Spaces is distinct from locking a widget's position. Unpin before deleting a globally pinned widget.
+- **Personal styling:** open a widget's inspector and expand “This widget’s style & Space”. Change its accent, surface, background opacity, font size, corners, border, shadow and density. Reset widget to theme removes its overrides; text opacity stays independent from surface opacity.
+- **Responsive widgets:** clocks expand into a month view; launchers expand into a searchable list/grid; expanded focus timers show work/break lengths and the local finish time. Collapse restores the compact rectangle. Notes gain quick tint/font controls, and to-do widgets can hide completed tasks directly.
+- **Desktop toolbar:** optional in Settings, and visible during editing. Quick-add, Space switching, editing, selection actions, history, Peek and Focus Mode. Optional auto-hide collapses it to a small handle 18 pixels inside the work area, away from the taskbar.
+- **Peek:** explicitly raises the current Space's Luma widgets for seven seconds, then restores their previous visibility and non-topmost behavior. Default global shortcut: Control+Alt+P. This is a temporary overlay, not a permanent always-on-top desktop.
+- **Focus Mode:** hides only Luma widgets marked “Hide this widget in Focus Mode”. Default global shortcut: Control+Alt+F. End Focus restores them. It does not manage other applications or Windows virtual desktops.
 
-Existing widgets, themes, wallpapers, tiling, scratchpads and content remain available. Core data stays format 4; there is no new notes/layout migration. Interface appearance is a separate local panel preference.
+Shortcuts can be reassigned or disabled. Invalid or conflicting assignments retain the previous registrations. Native editing polls the cursor only during an active drag; hidden widget windows are destroyed after a brief departure transition. System and app reduced-motion settings take priority.
 
-## Downloads
+## Install and data
 
-**Windows x64:** Setup.exe installs per user; Portable.exe runs without installation. Both save to the normal Luma Desk user profile. Quit the existing app before opening the updated one. Installer and portable builds are unsigned.
+Quit your running Luma copy, then run the Windows x64 Setup.exe. The portable launcher is an alternative; it still uses the normal Windows profile. Both builds are unsigned. Keep Windows protections enabled and review the checksums before running.
 
-**Mac (macOS 13+):** Choose arm64 for Apple Silicon or x64 for Intel. Open the DMG and drag Luma Desk into Applications; ZIP bundles are alternatives. Mac builds are ad-hoc signed, without Apple Developer ID or notarization. macOS may block opening them; keep system security protections enabled.
+The app upgrades settings format **4 to 5** to store new widget preferences. It first creates an untouched timestamped settings.v4-backup file. Existing notes, tasks, reminders, positions and saved layouts are retained. Formats 1–3 also migrate with an original backup. Back up the entire data folder with Luma closed. Restore the original backup before downgrading: older app versions cannot read format 5.
 
-Mac supports Luma widget layouts, visual settings, workspace/palette controls and scratchpads. **Other-app window tiling is Windows-only.** Mac widgets are transparent interactive windows and may rise when clicked. Wallpaper application uses macOS System Settings. Show Desktop/full-screen Spaces can hide widgets.
+No app account, subscription, analytics, cloud sync, API key or remote font dependency is added. Settings writes remain validated, atomic and debounced; pending writes flush on exit.
 
-## Verification and practical limits
+## Platforms and limits
 
-The release includes native Mac runner reports for both processors. Windows native tests use separate-process test windows, not the user's open apps, and verify exact position and maximize/normal-restore recovery. Widget renderers are denied app enumeration and window-control IPC. Existing theme, content-preservation, editor, restart, and packaged-app checks are also run.
+This release contains **Windows x64** packages. The separately available [Mac 2.6 preview](https://github.com/creative-cmj/luma-desk/releases/tag/v2.6.0) is unchanged and has not been upgraded or tested for 2.7 features. There is no native Linux package.
 
-Physical Mac interaction, Mac login/notification/Spaces behavior, quarantined-download installation, mixed-DPI Windows displays, actual display unplugging and real sleep/resume have not been manually verified.
+Windows 11 build 26200 was tested with two 1920×1080 displays at 100% scaling. Negative coordinates, portrait work areas, mixed scaling metadata and disconnect/reconnect recovery are covered by deterministic geometry tests. Physical mixed-DPI display changes, real sleep/resume, Explorer restart, Show Desktop and full-screen application behavior have not all been manually tested for this release.
 
-The Explorer desktop-parenting limitation on the tested Windows build remains: ordinary transparent widget windows are used as a fallback; Show Desktop may hide them. Separate widget windows consume memory. Luma is not an OS shell or compositor replacement.
+The existing Windows desktop integration remains. On the tested Windows build Explorer rejects desktop parenting, so Luma uses ordinary transparent fallback windows below normal apps. Show Desktop or full-screen apps may hide widgets. Recover Layout and the tray show/hide action remain available. Peek is explicitly temporary; this is not an OS shell or Hyprland compositor replacement.
 
-## Hyprland reference
-
-Reference: https://github.com/hyprwm/Hyprland — BSD-3-Clause, copyright 2022–2026 vaxerski. Luma's new layout planner, Windows bridge and website styling are independently implemented. No Hyprland binary, logo, website media or C++ plugins are bundled. The full upstream source has been checked out separately in the local workspace at commit `8010b4e5c66f97aa82cd5b3332b4ec613779b9a7` with its original license.
-
-Hyprland's Wayland rendering, Linux input protocols, tearing, C++ plugin manager, system-wide blur and native Linux workspace/group semantics are not implemented in Luma. Use Hyprland on a supported system for those capabilities. This project is independent and is not endorsed by Hyprland.
+Separate Electron widget windows use substantial memory. The included idle sample is a short observation from an isolated fixture, not a lightweight/performance guarantee.
