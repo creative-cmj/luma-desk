@@ -1,0 +1,34 @@
+name: Bug report
+description: Report a reproducible Luma Desk problem
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Please omit private notes, account details and local file paths. Do not attach your settings file."
+  - type: input
+    id: version
+    attributes:
+      label: Luma Desk version
+      placeholder: "2.2.1"
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Windows and displays
+      description: Windows build, monitor count and scaling percentages
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps and expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Sanitized screenshots are welcome. Remove personal content first.
+    validations:
+      required: true
