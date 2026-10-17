@@ -1,23 +1,26 @@
-# Luma Desk 2.3.0 verification
+# Luma Desk 2.5.0 verification
 
-Release target: Windows x64, installer and portable. Tested October 17, 2026 on Windows 11 build 26200 with two 1920×1080 displays at 100% scaling.
+## Passed
 
-- 34 unit tests passed: atomic saves and corrupt-file recovery, old-format migrations and byte-identical backups, content persistence, reminder deduplication/deletion, safe import boundaries, arithmetic parser, layout history, display recovery and oversized-save protection.
-- Actual editor tests passed: pointer drag/resize, cancellation, geometry validation, grouping, equal gaps, undo/redo, duplication and movement to the second real monitor.
-- Desktop regression passed: seven original widgets, theme/preset preservation, timers, safe launch boundary, file icons, import validation, global shortcut conflict, full restart and close-to-tray.
-- Packaged collection test passed: all sixteen library cards, native widget rendering, calculator, habits, countdown, planner, journal, stopwatch, breathing, thoughts and choices. Content and a running stopwatch survived a full restart.
-- Packaged launch smoke passed: version 2.3.0, local save, sandboxed renderers, no Node access, network-disabled content security policy, registered test shortcut, panel renderer released on close while two widgets continued.
-- Portable wrapper launched the offline app with two widgets.
-- Authenticode checks: installer and portable are NotSigned. No signing identity is claimed.
+- TypeScript checks and production frontend/main builds.
+- 38 unit tests, including tiling geometry, non-overlap, negative monitor positions, infeasible layout rejection, configuration validation and backup recovery.
+- Native Windows Workflow UI and packaged executable: widget tiling/undo, scratchpad visibility, command palette, configuration reload and full restart persistence.
+- Three separate-process test windows: native Windows tiling and exact restoration, including maximize state and normal restore geometry. Tests selected only task-owned fixture windows.
+- Widget renderers cannot enumerate or arrange external application windows. Protected bridge calls are restricted to the customization renderer and payloads are validated.
+- Existing Windows editor, drag/resize, group movement, keyboard control, theme/content preservation, safe import, monitor placement and restart regression.
+- All sixteen widget library cards and native companion controls; all nine themes and migration checkpoint tests.
+- Packaged Windows startup, local note persistence, close-to-tray, registered shortcut and sandbox/CSP checks. Portable wrapper startup also passes.
+- Both Mac architectures built and launched on native standard GitHub-hosted runners: widget tiling, configuration, scratchpad, command palette, nine themes, local restart persistence, Windows-binding isolation and correct external-app tiling unavailability. Bundle signature integrity checked with codesign.
+- Website: responsive layout, interactive five-layout preview, keyboard controls, nine-theme previews, video playback, links and FAQ at 1440, 768, 390 and 320 px.
 
-The normal user's installed app and profile were left untouched. A fresh interactive install/uninstall of 2.3.0 was not performed because it could replace existing per-user installation registration. Installer packaging completed; installed payload and portable launch were tested separately. Earlier local installation testing is not substituted for this release's unverified install/uninstall path.
+Mac build/test run: https://github.com/creative-cmj/luma-desk/actions/runs/39056474670
 
-On this Windows build Explorer parenting returned Win32 error 87. Widgets used transparent fallback windows below ordinary applications, without always-on-top. Show Desktop recovery, physical display unplug/replug, mixed-DPI interaction, real sleep/resume and Explorer restart remain unverified. Pure geometry tests cover negative display coordinates, portrait arrangements and changing work areas; they do not establish physical-device compatibility.
+## Conditions and limits
 
-A five-second two-widget idle sample, with the panel renderer closed and clock seconds off, totaled approximately 0.0635% reported CPU and 495 MiB summed working sets. Working sets include shared pages and are not unique memory; this is a brief observation, not a performance guarantee. No low-memory claim is made.
+Windows 11 build 26200, x64, two 1920×1080 monitors at 100% scaling. Other Windows versions, mixed-DPI displays, physical display unplugging, actual sleep/resume and Explorer restart have not been manually verified. App minimum sizes may prevent an exact requested arrangement.
 
-Public screenshots come from the packaged app using synthetic notes, tasks and habits. The runtime needs no account, cloud storage or API keys. Website browsing and GitHub downloads have their own service policies.
+The tested Explorer shell rejects desktop parenting; widget windows use a fallback. Show Desktop can hide them. Mac uses interactive transparent windows, without Finder desktop attachment; full-screen Spaces can hide widgets. Physical Mac interaction, login, notifications and quarantined-download installation have not been manually tested. Mac requires 13.0 or later.
 
-## 2.3 theme verification
+Windows executables are unsigned. Mac packages are ad-hoc signed; they have no Apple-trusted Developer ID or notarization. A successful codesign integrity check does not identify a trusted publisher. macOS may block these preview downloads.
 
-Actual UI checks select all nine theme cards, verify live native widget accent/surface colors and both bundled wallpapers, reset customization, migrate version-three settings with byte-identical backup, and restart with Lavender selected and notes preserved.
+Hyprland compositor/plugin/system-wide rendering features are not ported into this app. Read RELEASE-NOTES.md for the implemented features and platform distinctions.
