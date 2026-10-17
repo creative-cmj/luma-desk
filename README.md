@@ -1,35 +1,25 @@
 # Luma Desk
 
-Your desktop, in full flow. Sixteen local widgets, nine themes, five tiling layouts, keyboard commands and personal widget workspaces.
+Local desktop widgets and personal Spaces. No app account, subscription, analytics or cloud sync.
 
-[Download Luma Desk 2.6.0](https://github.com/creative-cmj/luma-desk/releases/tag/v2.6.0) · [Website](https://luma-desktop-widgets.gentlechar18.chatgpt.site/) · [Report a problem](https://github.com/creative-cmj/luma-desk/issues/new?template=bug_report.yml)
+[Windows 2.7 download](https://github.com/creative-cmj/luma-desk/releases/tag/v2.7.0) · [Website](https://luma-desktop-widgets.gentlechar18.chatgpt.site/) · [Mac 2.6 preview](https://github.com/creative-cmj/luma-desk/releases/tag/v2.6.0)
 
-Windows x64 installer and portable builds; Mac preview for Apple Silicon and Intel (macOS 13+). Windows builds are unsigned. Mac builds are ad-hoc signed, not Developer ID signed or notarized, and may be blocked by macOS.
+## Windows 2.7
 
-## A clearer space
+Native desktop editing with snapping and alignment guides, multi-selection, keyboard controls, Undo/Redo, named Spaces with shared content, per-widget styling, searchable command palette, expandable widgets, optional desktop toolbar, temporary Peek and Focus Mode.
 
-Version 2.6 adds coordinated light and dark control-panel interfaces, original vector icons, a sidebar workspace picker, and a desktop overview. Widget and theme galleries have clearer previews and controls. Choose the sun/moon button to change the interface; your widget colors stay independent. Both choices survive a restart.
+Quit the running copy, then install Setup.exe or run Portable.exe. Both use `%APPDATA%\Luma Desk`. The installer is per-user; builds are unsigned. Keep security protections enabled and review the release/checksum files.
 
-## Workflow
+The first run backs up format-4 settings before migrating to format 5. Older formats also receive original backups. To back up personal content, close Luma and copy the complete data folder. Restore the original backup before downgrading. Do not post profiles publicly: they can contain personal writing and paths.
 
-Choose **Workflow** in the app. Pick Master, Dwindle, Grid, Columns or Monocle, adjust gaps and main-window share, select a monitor, and arrange Luma widgets. Unlock the layout first. Undo restores the previous widget layout.
+Default desktop shortcuts: Control+Alt+E for editing, Control+Alt+K for command search, Control+Alt+P for seven-second Peek and Control+Alt+F for Focus Mode. Change or disable them in Settings. Control+K opens command search inside the panel.
 
-On Windows, refresh the app-window list, select only the windows you want to move and choose Arrange. Restore brings back their previous placements. Other-app tiling is not available on Mac. This is manual arrangement, not an automatically running window manager.
+Spaces are Luma widget workspaces, separate from OS virtual desktops. Ordinary application windows remain above widgets except during explicit Peek. Show Desktop and fullscreen applications can hide widgets on fallback Windows integration.
 
-Use **Ctrl+K / Command+K** for command search. Switch Luma workspaces, tuck widgets away and bring them back, or recover a missing layout. Luma presets are separate from OS virtual desktops.
+## Other platforms
 
-Gradient borders, adjustable glow, translucent surfaces and widget entrance motion update live. Reduced-motion preferences are respected. These settings affect Luma, not every OS window.
+The separate Mac 2.6 preview remains available for Apple Silicon and Intel, macOS 13+. It is ad-hoc signed without Developer ID or notarization, and macOS may block it. The 2.7 Windows features are not claimed for Mac. No native Linux package is available.
 
-## Install and keep your content
+[Full release details](RELEASE-NOTES.md) · [Verification and limits](VERIFICATION.md) · [Report an issue](https://github.com/creative-cmj/luma-desk/issues/new?template=bug_report.yml)
 
-Windows: run Setup.exe, or launch Portable.exe without installation. Quit the existing version before starting the new one. Both share `%APPDATA%\Luma Desk`.
-
-Mac: open the DMG, drag Luma Desk into Applications, and launch it there. For a ZIP, extract and move the app bundle into Applications. Select arm64 for M-series Macs and x64 for Intel. Data saves in `~/Library/Application Support/Luma Desk`. Wallpapers are set in macOS System Settings. Widgets can rise when clicked and may be hidden by Show Desktop or full-screen Spaces.
-
-Close Luma before backing up its data folder. Existing format-4 content remains compatible. New workflow settings use a separate `desktop-control.json`; existing notes and presets are not converted to a new format. Do not share profiles publicly: they may contain private writing and file paths.
-
-## What Luma is
-
-An independent Electron desktop widget app inspired by customizable, keyboard-led workflows. It does not run the Hyprland compositor or Linux C++ plugins. [Full capabilities and limitations](RELEASE-NOTES.md). [Verification notes](VERIFICATION.md).
-
-This public repository hosts release binaries, documentation and build-verification recipes. Application source remains local. No app account, cloud sync, API key or subscription is required.
+This public repository contains release binaries, documentation and verification workflows. Application source remains local. Independent project; it does not run the Hyprland compositor or its plugins.
