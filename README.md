@@ -1,6 +1,6 @@
 # Luma Desk
 
-Sixteen useful Windows desktop widgets, arranged your way. Luma Desk runs locally without an account or subscription.
+Sixteen useful desktop widgets, arranged your way. Windows stable and a new Mac preview. Luma Desk runs locally without an account or subscription.
 
 **Windows x64 · 2.3.0 · unsigned community release**
 
@@ -9,6 +9,10 @@ Sixteen useful Windows desktop widgets, arranged your way. Luma Desk runs locall
 [Visit the Luma Desk website](https://luma-desktop-widgets.gentlechar18.chatgpt.site/) for real screenshots, theme previews and a short interface tour.
 
 ![Actual Luma Desk 2.3.0 theme gallery](https://luma-desktop-widgets.gentlechar18.chatgpt.site/assets/themes-2.3.png)
+
+## Mac preview
+
+[Download Luma Desk 2.4.0 for Mac](https://github.com/creative-cmj/luma-desk/releases/tag/v2.4.0-mac-preview) — Apple Silicon and Intel, disk image and ZIP. Ad-hoc signed, without Apple Developer ID or notarization; macOS may block opening. [Mac installation, behavior and verification](MAC-PREVIEW.md). Windows stable remains 2.3.0.
 
 ## New in 2.3
 
