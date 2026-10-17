@@ -2,9 +2,13 @@
 
 Your desktop, in full flow. Sixteen local widgets, nine themes, five tiling layouts, keyboard commands and personal widget workspaces.
 
-[Download Luma Desk 2.5.0](https://github.com/creative-cmj/luma-desk/releases/tag/v2.5.0) · [Website](https://luma-desktop-widgets.gentlechar18.chatgpt.site/) · [Report a problem](https://github.com/creative-cmj/luma-desk/issues/new?template=bug_report.yml)
+[Download Luma Desk 2.6.0](https://github.com/creative-cmj/luma-desk/releases/tag/v2.6.0) · [Website](https://luma-desktop-widgets.gentlechar18.chatgpt.site/) · [Report a problem](https://github.com/creative-cmj/luma-desk/issues/new?template=bug_report.yml)
 
 Windows x64 installer and portable builds; Mac preview for Apple Silicon and Intel (macOS 13+). Windows builds are unsigned. Mac builds are ad-hoc signed, not Developer ID signed or notarized, and may be blocked by macOS.
+
+## A clearer space
+
+Version 2.6 adds coordinated light and dark control-panel interfaces, original vector icons, a sidebar workspace picker, and a desktop overview. Widget and theme galleries have clearer previews and controls. Choose the sun/moon button to change the interface; your widget colors stay independent. Both choices survive a restart.
 
 ## Workflow
 
