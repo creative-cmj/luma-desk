@@ -1,30 +1,28 @@
-# Luma Desk 2.6.0 verification
+# Luma Desk 2.7.0 — Windows verification
 
-## Passed
+## Verified
 
-- New interface tested in the development build and final packaged Windows executable: independent panel/widget themes, workspace switching without note loss, all nine palettes and sixteen icons, command search and restart persistence.
-- Primary button text contrast exceeds 4.5:1 in both interfaces. No horizontal overflow at the supported 1000px minimum or 1600px window width. These checks do not constitute a full accessibility audit.
-- Actual app screenshots captured for all six pages in light mode and desktop/theme/widget pages in dark mode. Packaged native Mac tests also check the overview, light-mode switch and preference persistence.
+- TypeScript and production builds; 44 unit tests.
+- Original settings format 4 migrates to 5 with a byte-identical timestamped backup. Atomic-save/corrupt-primary recovery and malformed/import rejection remain covered.
+- Native executable: command palette creates a real note window; typing and arrow-key text editing retain its position. Quick tint and font controls update the note.
+- Keyboard editing updates actual Windows widget bounds with snapping, resizing, group movement, Undo and Redo. The native alignment-guide window renders and is non-focusable/click-through; its renderer cannot execute desktop actions.
+- Shared-content Space switching, pinning a clock across Spaces, live per-widget surface/opacity, clock/calendar expansion and exact compact-bound restoration.
+- Focus Mode hides only marked Luma widgets. Seven-second Peek automatically restores non-topmost behavior; hidden-state Peek also restores its original visibility flags.
+- Conflicting global shortcut assignments retain previous active bindings. Space shortcuts register. Optional native toolbar expands/collapses within the monitor work area and cannot enumerate external applications.
+- A complete process restart preserves saved state and desktop-control preferences.
+- Existing editor, personal content, sixteen widgets, nine themes, local reminders, file-launch safety, import, monitor placement and native selected-app tiling/restore regressions pass.
+- Packaged startup, close-to-tray, local save, sandbox and portable-wrapper launch checks run against the 2.7 executable.
 
-- TypeScript checks and production frontend/main builds.
-- 38 unit tests, including tiling geometry, non-overlap, negative monitor positions, infeasible layout rejection, configuration validation and backup recovery.
-- Native Windows Workflow UI and packaged executable: widget tiling/undo, scratchpad visibility, command palette, configuration reload and full restart persistence.
-- Three separate-process test windows: native Windows tiling and exact restoration, including maximize state and normal restore geometry. Tests selected only task-owned fixture windows.
-- Widget renderers cannot enumerate or arrange external application windows. Protected bridge calls are restricted to the customization renderer and payloads are validated.
-- Existing Windows editor, drag/resize, group movement, keyboard control, theme/content preservation, safe import, monitor placement and restart regression.
-- All sixteen widget library cards and native companion controls; all nine themes and migration checkpoint tests.
-- Packaged Windows startup, local note persistence, close-to-tray, registered shortcut and sandbox/CSP checks. Portable wrapper startup also passes.
-- Both Mac architectures built and launched on native standard GitHub-hosted runners: widget tiling, configuration, scratchpad, command palette, nine themes, local restart persistence, Windows-binding isolation and correct external-app tiling unavailability. Bundle signature integrity checked with codesign.
-- Website: responsive layout, interactive five-layout preview, keyboard controls, nine-theme previews, video playback, links and FAQ at 1440, 768, 390 and 320 px.
+Tests use isolated profiles and task-owned fixture windows. The running installed copy and normal user data are not used or overwritten during testing.
 
-Mac build/test run: https://github.com/creative-cmj/luma-desk/actions/runs/39058891083
+## Measurement
 
-## Conditions and limits
+The release includes an actual Electron idle-process sample: three visible widgets, the panel and optional toolbar, sampled over three seconds. CPU percentages and working/private memory are recorded by process. This is an observation on this Windows host, not a benchmark or performance guarantee. Multiple Electron renderer windows consume substantial memory.
 
-Windows 11 build 26200, x64, two 1920×1080 monitors at 100% scaling. Other Windows versions, mixed-DPI displays, physical display unplugging, actual sleep/resume and Explorer restart have not been manually verified. App minimum sizes may prevent an exact requested arrangement.
+## Limits
 
-The tested Explorer shell rejects desktop parenting; widget windows use a fallback. Show Desktop can hide them. Mac uses interactive transparent windows, without Finder desktop attachment; full-screen Spaces can hide widgets. Physical Mac interaction, login, notifications and quarantined-download installation have not been manually tested. Mac requires 13.0 or later.
+Host: Windows 11 build 26200 x64, two 1920×1080 monitors at 100% scaling. Negative/portrait work areas, mixed scaling metadata and disconnect/reconnect recovery are deterministic tests. Physical mixed-DPI changes, unplugging displays, real sleep/resume, Explorer restart and all full-screen/Show Desktop combinations were not manually exercised for this release.
 
-Windows executables are unsigned. Mac packages are ad-hoc signed; they have no Apple-trusted Developer ID or notarization. A successful codesign integrity check does not identify a trusted publisher. macOS may block these preview downloads.
+The existing Explorer fallback limitation remains: Show Desktop can hide ordinary transparent widget windows. Widgets are below ordinary applications except during explicit temporary Peek. No Windows virtual-desktop manager or Hyprland compositor is bundled.
 
-Hyprland compositor/plugin/system-wide rendering features are not ported into this app. Read RELEASE-NOTES.md for the implemented features and platform distinctions.
+Windows executables are unsigned. Mac 2.7 and Linux builds are not provided or verified. Mac users can continue to use the separate 2.6 preview.
