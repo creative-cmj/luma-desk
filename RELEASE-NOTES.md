@@ -1,23 +1,19 @@
-# Luma Beta — build 3.1.0
+# Luma Beta — build 3.4.10
 
-A calmer, clearer app, refined through repeated actual-app inspection rather than another wholesale redesign.
+Windows desktop widgets with a simpler, more colorful Desktop Studio.
 
-- A shared midnight/lavender and light design system with softer depth, consistent controls, readable labels and restrained motion.
-- A higher desktop preview and a prominent Save Space action. Secondary selection/alignment controls reveal when needed; all editing features remain.
-- A widget library with static theme-aware previews, readable cards, search counts, useful empty/full states and a route to another Space when full.
-- Four keyboard-accessible Settings sections: Everyday, Desktop controls, Updates, Help & compatibility.
-- Focus-managed rename, confirmation, import and first-run dialogs. Escape cancels, Tab stays inside, closing restores focus, and live updates preserve input drafts.
-- More consistent native widget icons/materials and contrast-aware text on solid custom surfaces. Surface opacity remains independent from text. Long to-do items wrap while remaining editable.
-- Two-row navigation and responsive canvas/cards for enlarged interface text. No continuous decorative animation.
+- Coordinated light/dark collections, theme-aware previews and readable custom widget colors.
+- Clearer task empty/completed states, vector controls and reordering within named lists.
+- Compact launcher/link empty states with a direct add action.
+- Calendar event cards with wrapping titles, reminder badges and localized date/time labels.
+- Refined journal entry/word counts and native widget styling.
+- Clear save-failure status that recovers after a successful retry, preserving editable writing.
+- Native editing, shared Spaces, timers, calendar actions and personal content retained.
 
-Notes, tasks, Spaces, widget themes, data format 5 and update behavior are preserved. App identity/data paths are unchanged. Luma is still Beta; internal build numbers increase so installed updaters continue working.
+## Download and update
 
-## Get this update
+Use Luma-Desk-3.4.10-Setup.exe for Windows x64 installation and automatic updates. Existing Setup users can check in Settings; downloaded updates install on Restart to update or Quit Luma. Closing the panel keeps the tray app running. Portable.exe runs without installation and requires manual updates. Keep one copy running at a time.
 
-Existing Windows Setup copies: open Settings → Check for updates in your current build. Once installed, the new layout places update controls in Settings → Updates. Downloaded updates install when you Quit Luma, or choose Restart to update. Closing the panel leaves Luma in the tray. Portable and Mac preview copies remain manual; the separate Mac 2.6 preview is unchanged.
+These Windows builds are unsigned. The separate Mac 2.6 preview is unchanged; no new Mac or Linux build is included. Internal Beta build numbers keep increasing for update compatibility; the first finished public release is planned as Luma 1.0.
 
-## Verification and limits
-
-51 unit tests, packaged UI/refinement checks, default/populated captures of all sixteen real native widgets, three core themes, 1000/1600px windows and 100/125/150% renderer zoom, dialog/keyboard/long-content flows and exact saved-state restoration. Native OS movement/toolbar/Spaces and updater checksum/download/handoff regressions are verified separately.
-
-Renderer zoom is not a physical mixed-DPI test. Physical display changes, sleep/resume, Explorer/fullscreen combinations and full installer replacement remain unverified. OS-native menu/notification appearance was not captured. Arbitrary wallpaper colors beneath translucent custom midtone surfaces can affect perceived contrast. Windows builds are unsigned. Actual idle samples are observations, not a performance guarantee.
+See VERIFICATION.md and SHA256SUMS.txt for tested behavior and file integrity.
