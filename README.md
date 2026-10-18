@@ -1,14 +1,14 @@
 # Luma Beta
 
-In development: the first finished public release will be Luma 1.0. Internal build numbers continue increasing for updater compatibility; the current Beta build is 3.1.0.
+In development: the first finished public release will be Luma 1.0. Internal build numbers continue increasing for updater compatibility; the current Beta build is 3.4.10.
 
 Local desktop widgets and personal Spaces. No app account, subscription, analytics or cloud sync.
 
-[Windows Beta download](https://github.com/creative-cmj/luma-desk/releases/tag/v3.1.0) · [Website](https://luma-desktop-widgets.gentlechar18.chatgpt.site/) · [Mac 2.6 preview](https://github.com/creative-cmj/luma-desk/releases/tag/v2.6.0)
+[Windows Beta download](https://github.com/creative-cmj/luma-desk/releases/tag/v3.4.10) · [Website](https://luma-desktop-widgets.gentlechar18.chatgpt.site/) · [Mac 2.6 preview](https://github.com/creative-cmj/luma-desk/releases/tag/v2.6.0)
 
 ## Windows Beta
 
-Build 3.1 refines the whole app: a calmer midnight/light material system, a more prominent desktop canvas and Save Space control, static theme-aware widget previews, keyboard-accessible Settings sections, focus-managed dialogs, and wrapping to-do text. All sixteen native widgets retain their functionality; Cozy and Minimal keep their own palettes.
+Build 3.4.10 refines the Desktop Studio, coordinated light/dark collections, readable custom colors and all sixteen widgets. Task lists have clear empty/completed states and consistent controls; compact launchers have a direct add action. Calendar events have wrapping cards, reminder badges and clearer dates. The journal has refined count labels. Save failures show clear feedback and recover correctly after a successful retry.
 
 A new Desktop Studio layout replaces the sidebar with top navigation and a Space switcher. The larger canvas has a widget layer list with direct selection/visibility controls and a dedicated properties inspector. New charcoal/lavender and warm light interfaces apply across the app without changing widget themes.
 
@@ -24,7 +24,7 @@ Spaces are Luma widget workspaces, separate from OS virtual desktops. Ordinary a
 
 ## In-app updates
 
-If you already use Windows Setup 2.8 or 3.0, check for updates in Settings and choose Restart to update once to receive the Beta branding update. New users can install Setup build 3.1.0. Luma checks GitHub at startup and every six hours, downloads stable updates in the background, then installs downloaded updates automatically when you choose Quit Luma. Closing the panel keeps Luma running in the tray; it does not quit or install. Restart to update remains available. A settings checkpoint is saved before starting the installer. If saving fails, Luma postpones quitting and the update. No GitHub account is required. Your widget content is not uploaded. Offline errors leave the current version usable. Portable builds and the Mac preview still require manual updates.
+Existing Windows Setup users can check for updates in Settings and choose Restart to update when the download is ready. New users can install Setup build 3.4.10. Luma checks GitHub at startup and every six hours, downloads stable updates in the background, then installs downloaded updates automatically when you choose Quit Luma. Closing the panel keeps Luma running in the tray; it does not quit or install. Restart to update remains available. A settings checkpoint is saved before starting the installer. If saving fails, Luma postpones quitting and the update. No GitHub account is required. Your widget content is not uploaded. Offline errors leave the current version usable. Portable builds and the Mac preview still require manual updates.
 
 ## Other platforms
 
