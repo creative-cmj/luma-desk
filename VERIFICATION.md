@@ -1,18 +1,14 @@
-# Verification — Portl Beta 3.5.0
+# Verification — Portl Beta 3.6.0
 
-- TypeScript/Vite build and all **66 unit tests passed**. Coverage includes identity, monitor geometry, migration backup/write failures, exact writing, shared Spaces, launcher column validation, real system sampling and updater safeguards.
-- Actual Electron source review exercised all seventeen native widgets and existing editing controls, light/dark collections, enlarged layouts, search/commands, keyboard/focus, exact save/restart and native desktop controls.
-- **252 solid widget-text contrast measurements** across the reviewed palettes had no reported concerns. Additional app-control palette checks passed. These measurements do not establish contrast over every arbitrary wallpaper/gradient.
-- Packaged premium review passed at 1672×941, 1366×768 and 1000×740 window sizes, including 150% renderer zoom. Canvas aspect ratio, pointer drag/resize with one-step Undo, real inspector theme/Space actions, new-widget selection, native launcher columns and exact restart were verified with no renderer errors.
-- Packaged legacy format-five profile migration produced a byte-identical original backup and preserved exact writing, Space names and appearance after restart. Source tests additionally exercised the default original profile location.
-- Packaged write-failure test preserved the previous file and editable writing, showed visible failure at compact/enlarged sizes, then persisted the successful retry and restored it exactly after restart.
-- System values came from actual native OS readings. The integration test confirmed that ordinary Clock widgets received zero telemetry events; runtime samples did not persist. A bounded telemetry snapshot was substantially smaller than the full settings view in the isolated fixture. This is not a performance benchmark.
-- Packaged updater rejected corrupt SHA512, downloaded and verified the actual installer, showed ready/error states and routed Restart/Quit through the real checkpoint/install-command path. Installer process launch and quit were intercepted: no personal installation was replaced.
-- Executable and installer portal icon resources matched the source ICO pixels at 16/32/48/256px. Runtime preview/apply ribbon assets matched byte-for-byte at 1920×1080; original source artwork, source code, helpers and profiles were excluded from the application archive.
-- Installer SHA512 matches latest.yml. SHA256SUMS.txt covers the listed release files; uploaded assets are checked against local digests before publication.
+- TypeScript/Vite build and all **70 unit tests passed**, including starter geometry/content preservation, invalid requests, exact restart and measured neighboring gaps. Existing migration, atomic-save, contrast, layout, telemetry and updater regressions pass.
+- Actual source review passed all **17 native widget types**, six app pages at 1000/1600px and 100/125/150% renderer zoom, existing dialogs/keyboard/menu controls, shared content and full restart.
+- Packaged guided-studio test passed setup style/widget/display preview, new Space creation, old layout and exact writing preservation, side-effect-free starter cancel, useful quick controls reflected in actual native text/font/opacity, coordinated theme preview/style controls, actual drag guides and Escape geometry restoration, keyboard focus containment, compact/enlarged layouts and full restart.
+- Packaged premium-editor regression passed aspect-preserving preview sizing, real theme/Space inspector actions, pointer drag/resize and Undo, native launcher columns, new-widget selection, telemetry and exact restart.
+- Packaged save-failure/retry test preserved the previous settings file and exact writing and restored the successful retry after restart. Packaged legacy profile migration preserved a byte-identical format-five original backup and exact writing.
+- Packaged updater rejected a corrupt SHA512, downloaded and verified the actual installer, displayed ready/error states and routed Restart/Quit through save-checkpoint and real install commands. Installer spawn/quit were intercepted.
+- Native executable and installer portal icon resources match source ICO pixels at 16/32/48/256px. Packaged version/app ID and runtime wallpaper parity were checked; private source, test profiles and helpers were excluded from the app archive.
+- Installer SHA512 matches latest.yml. Release asset uploads are checked against local sizes and SHA256 digests, and SHA256SUMS.txt covers the listed release files.
 
-## Practical limits
+All GUI tests use isolated profiles; the user's installed copy and personal data were not modified. Renderer zoom does not prove physical mixed-DPI behavior. Full installed-version replacement, OS wallpaper apply, shell icon-cache refresh and a new Mac/Linux runtime were not tested. Windows binaries remain unsigned. Starter images are explicitly layout previews, not invented live readings. No FPS or broad performance benchmark claim is made.
 
-Full installed-version replacement, physical mixed-DPI hardware, OS wallpaper application, shell icon-cache refresh, a new Mac/Linux runtime and arbitrary third-party launch targets were not tested in this release. Renderer zoom, controlled native fixtures and install-command interception have those practical limits. Windows desktop fallback is displayed honestly. Tests use isolated profiles; the personal installed app and data were not modified.
-
-Only allowlisted binaries, update metadata, checksums, a sanitized screenshot and public documentation are released. Application source, private source backups, credentials, launch helpers and test/personal profiles stay local.
+Only allowlisted binaries, update metadata, checksums, sanitized public documentation and the reviewed screenshot are uploaded. Application source, private backups, test/personal profiles, credentials and launch helpers stay local.
