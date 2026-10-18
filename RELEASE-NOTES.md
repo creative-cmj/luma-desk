@@ -1,9 +1,23 @@
-# Luma Beta — build 3.0.1
+# Luma Beta — build 3.1.0
 
-Luma is still in development. The app and download page now use Luma Beta, reserving Luma 1.0 for the first finished release.
+A calmer, clearer app, refined through repeated actual-app inspection rather than another wholesale redesign.
 
-The Windows title, studio label, footer and update settings use Beta branding. Settings identifies the technical version as a build number. Internal versions continue upward (3.0.0 → 3.0.1) so existing updaters receive the release. Installer identity, data folder, app ID, notes, Spaces and themes stay compatible.
+- A shared midnight/lavender and light design system with softer depth, consistent controls, readable labels and restrained motion.
+- A higher desktop preview and a prominent Save Space action. Secondary selection/alignment controls reveal when needed; all editing features remain.
+- A widget library with static theme-aware previews, readable cards, search counts, useful empty/full states and a route to another Space when full.
+- Four keyboard-accessible Settings sections: Everyday, Desktop controls, Updates, Help & compatibility.
+- Focus-managed rename, confirmation, import and first-run dialogs. Escape cancels, Tab stays inside, closing restores focus, and live updates preserve input drafts.
+- More consistent native widget icons/materials and contrast-aware text on solid custom surfaces. Surface opacity remains independent from text. Long to-do items wrap while remaining editable.
+- Two-row navigation and responsive canvas/cards for enlarged interface text. No continuous decorative animation.
 
-Existing Setup users: open Settings → Check for updates. On build 3.0, the download installs when you Quit Luma; Restart to update is available too. Build 2.8 users need Restart to update once. Closing the panel leaves Luma in the tray.
+Notes, tasks, Spaces, widget themes, data format 5 and update behavior are preserved. App identity/data paths are unchanged. Luma is still Beta; internal build numbers increase so installed updaters continue working.
 
-The GitHub release remains on the existing stable update feed so current clients can receive it; that feed setting does not mean Luma has left Beta. Mac 2.6 preview remains unchanged. Windows packages remain unsigned, and full installer replacement remains unverified. No functionality or data format changes are included in this branding patch.
+## Get this update
+
+Existing Windows Setup copies: open Settings → Check for updates in your current build. Once installed, the new layout places update controls in Settings → Updates. Downloaded updates install when you Quit Luma, or choose Restart to update. Closing the panel leaves Luma in the tray. Portable and Mac preview copies remain manual; the separate Mac 2.6 preview is unchanged.
+
+## Verification and limits
+
+51 unit tests, packaged UI/refinement checks, default/populated captures of all sixteen real native widgets, three core themes, 1000/1600px windows and 100/125/150% renderer zoom, dialog/keyboard/long-content flows and exact saved-state restoration. Native OS movement/toolbar/Spaces and updater checksum/download/handoff regressions are verified separately.
+
+Renderer zoom is not a physical mixed-DPI test. Physical display changes, sleep/resume, Explorer/fullscreen combinations and full installer replacement remain unverified. OS-native menu/notification appearance was not captured. Arbitrary wallpaper colors beneath translucent custom midtone surfaces can affect perceived contrast. Windows builds are unsigned. Actual idle samples are observations, not a performance guarantee.
