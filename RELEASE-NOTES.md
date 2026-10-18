@@ -1,19 +1,14 @@
-# Luma Beta — build 3.4.10
+# Portl Beta — build 3.4.11
 
-Windows desktop widgets with a simpler, more colorful Desktop Studio.
+Luma is now **Portl**.
 
-- Coordinated light/dark collections, theme-aware previews and readable custom widget colors.
-- Clearer task empty/completed states, vector controls and reordering within named lists.
-- Compact launcher/link empty states with a direct add action.
-- Calendar event cards with wrapping titles, reminder badges and localized date/time labels.
-- Refined journal entry/word counts and native widget styling.
-- Clear save-failure status that recovers after a successful retry, preserving editable writing.
-- Native editing, shared Spaces, timers, calendar actions and personal content retained.
+- New original portal doorway logo with a violet-to-cyan frame and dark rounded background.
+- Portl branding across navigation, startup, window/tray labels, update messages and Windows packages.
+- Matching app/installer and monochrome tray icons.
+- Existing Luma Desk profile folder, application ID, update feed, storage keys and preset format retained.
+- Existing notes, tasks, Spaces and old exports remain usable. New exports use .portl.json.
+- Updater installation detection supports both legacy Luma and new Portl uninstallers.
 
-## Download and update
+Use Portl-3.4.11-Setup.exe for Windows x64 installation and automatic updates. Existing installed users can check in Settings and choose Restart to update after the download. Portable updates remain manual. Windows binaries are unsigned. The older separate Mac preview is unchanged.
 
-Use Luma-Desk-3.4.10-Setup.exe for Windows x64 installation and automatic updates. Existing Setup users can check in Settings; downloaded updates install on Restart to update or Quit Luma. Closing the panel keeps the tray app running. Portable.exe runs without installation and requires manual updates. Keep one copy running at a time.
-
-These Windows builds are unsigned. The separate Mac 2.6 preview is unchanged; no new Mac or Linux build is included. Internal Beta build numbers keep increasing for update compatibility; the first finished public release is planned as Luma 1.0.
-
-See VERIFICATION.md and SHA256SUMS.txt for tested behavior and file integrity.
+See VERIFICATION.md for checks and limitations, and SHA256SUMS.txt for asset integrity.
