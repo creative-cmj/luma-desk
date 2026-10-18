@@ -1,21 +1,9 @@
-# Luma Desk 3.0.0 — Desktop Studio
+# Luma Beta — build 3.0.1
 
-## A new layout and visual system
+Luma is still in development. The app and download page now use Luma Beta, reserving Luma 1.0 for the first finished release.
 
-- Full-width top navigation with a persistent Space switcher and save status.
-- Larger desktop canvas, a consolidated editing toolbar, and a widget layer list. Select widgets and hide/show them directly from the list; Shift-click selects groups.
-- Dedicated scrolling properties inspector, including in expanded editing.
-- Charcoal and lavender dark mode, warm light mode, refreshed cards and controls across Themes, Widgets, Workflow, Spaces and Settings.
-- Existing notes, tasks, widget themes, shortcuts, Spaces and format-5 data are preserved. Changing the interface appearance does not change your widgets.
+The Windows title, studio label, footer and update settings use Beta branding. Settings identifies the technical version as a build number. Internal versions continue upward (3.0.0 → 3.0.1) so existing updaters receive the release. Installer identity, data folder, app ID, notes, Spaces and themes stay compatible.
 
-## Updates install when you quit
+Existing Setup users: open Settings → Check for updates. On build 3.0, the download installs when you Quit Luma; Restart to update is available too. Build 2.8 users need Restart to update once. Closing the panel leaves Luma in the tray.
 
-Windows Setup copies download stable updates in the background. Once a download is ready, choosing Quit Luma installs it silently. Luma saves a settings checkpoint first; a save failure postpones quitting and installation. Closing the panel keeps Luma in the tray. Restart to update is still available for immediate installation.
-
-If you already have Setup 2.8: choose Settings → Check for updates → Restart to update once to get 3.0. From 3.0 onward, downloaded updates install on quit. No website re-download is needed for the 2.8 Setup upgrade. Portable and Mac preview copies still update manually.
-
-Windows builds remain unsigned. Mac 2.6 preview remains unchanged. No Linux package is included.
-
-## Tested
-
-49 unit tests; packaged visual checks in light/dark mode at 1000/1600px; widget layer selection and visibility; Space/content persistence through restart; real editing, geometry, multi-selection, undo/redo, native movement, Workflow window tiling and restoration. Packaged updater tests validate real installer downloads, checksum rejection, manual restart and the silent install-on-quit command after a checkpoint. Installer spawning is intercepted to preserve the running installation: full installed-version replacement has not been exercised.
+The GitHub release remains on the existing stable update feed so current clients can receive it; that feed setting does not mean Luma has left Beta. Mac 2.6 preview remains unchanged. Windows packages remain unsigned, and full installer replacement remains unverified. No functionality or data format changes are included in this branding patch.
